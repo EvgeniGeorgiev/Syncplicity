@@ -10,7 +10,6 @@ public class LoginPage : GlobalPage
     private readonly By PasswordErrorMessage = By.CssSelector("#MainContent_login_txtPassword-error");
     private readonly By SystemMessageError = By.CssSelector("#SystemMessageContent_statusMessage li");
 
-
     internal void PopulateEmail(string email)
     {
         webDriver.FindElement(EmailInput).SendKeys(email);

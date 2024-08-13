@@ -14,11 +14,6 @@ public class GlobalPage
         _wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
     }
 
-    internal void Click(By element)
-    {
-        webDriver.FindElement(element).Click();
-    }
-
     public void WaitForAjaxToComplete()
     {
         _wait.Until(driver =>
@@ -40,12 +35,6 @@ public class GlobalPage
         {
             throw new Exception($"Element with selector {elementSelector.ToString()} was not visible within the timeout period.");
         }
-    }
-
-    internal bool IsElementVisible(By element)
-    {
-        IReadOnlyCollection<IWebElement> elementsList = webDriver.FindElements(element);
-        return elementsList.Count() > 0;
     }
 
     internal string GetCurrentURL()

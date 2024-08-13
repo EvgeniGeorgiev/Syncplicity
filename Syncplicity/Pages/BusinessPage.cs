@@ -3,6 +3,7 @@
 public class BusinessPage : GlobalPage
 {
     private string _storedEmail = string.Empty;
+
     private readonly By MainMenuItems = By.CssSelector("#mainnav a");
     private readonly By SubMenuItems = By.CssSelector(".sub-menu a");
     private readonly By AddUserButton = By.CssSelector(".button.blue-button.floatright");
