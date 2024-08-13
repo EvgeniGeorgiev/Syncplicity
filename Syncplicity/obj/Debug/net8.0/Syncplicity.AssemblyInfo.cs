@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Syncplicity")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60ce11b3890d21465ce253e3e59a91a71ec6b23d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a30acd105df5dba03028289a8867a3178d965cc9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Syncplicity")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Syncplicity")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

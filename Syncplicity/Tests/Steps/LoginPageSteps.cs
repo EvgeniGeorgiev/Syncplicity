@@ -20,43 +20,61 @@ public class LoginPageSteps
         _loginPageInteractions.NavigateToPage(baseUrl);
     }
 
-    [When(@"the user logs in with valid credentials")]
-    public void WhenTheUserLogsInWithValidCredentials()
+    [When(@"the user logs in with '(.*)' username and '(.*)' password")]
+    public void WhenTheUserLogsInWithProvidedCredentials(string username, string password)
     {
-        //ToDo: Remove hardcoded values
-        _loginPageInteractions.EnterEmail("syncplicity-technical-interview@dispostable.com");
-        _loginPageInteractions.EnterPassword("s7ncplicit@Y");
+        _loginPageInteractions.EnterEmail(username);
+        _loginPageInteractions.EnterPassword(password);
     }
 
-    [Given(@"the user is logged in with the provided account")]
-    public void GivenTheUserIsLoggedInWithTheProvidedAccount()
+    [Given(@"the user is logged in with '(.*)' username and '(.*)' password")]
+    public void GivenTheUserIsLoggedInWithProvidedCredentials(string username, string password)
     {
         GivenTheUserNavigatesToTheLoginPage();
-        WhenTheUserLogsInWithValidCredentials();
+        _loginPageInteractions.EnterEmail(username);
+        _loginPageInteractions.EnterPassword(password);
     }
 
     [Then(@"the user should be logged in")]
     public void ThenTheUserShouldBeLoggedIn()
     {
-        //ToDo: Remove hardcoded values
         string expectedUrl = "https://eu.syncplicity.com/Business/";
         string currentUrl = _loginPageInteractions.GetCurrentUrl();
         ClassicAssert.AreEqual(expectedUrl, currentUrl, "The user was not redirected to the expected URL after login.");
     }
 
-    [When(@"the user attempts to log in with invalid credentials")]
-    public void WhenTheUserAttemptsLogInWithInvalidCredentials()
+    [When(@"the user submits '(.*)' username on login")]
+    public void WhenTheSubmitsUsernameOnLogin(string username)
     {
-        //ToDo: Remove hardcoded values
-        _loginPageInteractions.EnterEmail("NotValidEmail");
+        _loginPageInteractions.EnterEmail(username);
+    }
+
+    [When(@"the user submits '(.*)' password on login")]
+    public void WhenTheSubmitsPasswordOnLogin(string password)
+    {
+        _loginPageInteractions.EnterPassword(password);
     }
 
     [Then(@"the user should see invalid email address error")]
     public void ThenTheUserShouldSeeInvalidEmailAddressError()
     {
-        //ToDo: Remove hardcoded values
         string expectedErrorMessage = "Please enter a valid email address.";
         string actualErrorMessage = _loginPageInteractions.ReturnEmailErrorMessageText();
-        ClassicAssert.AreEqual(expectedErrorMessage, actualErrorMessage, "The error message text is incorrect.");
+        ClassicAssert.AreEqual(expectedErrorMessage, actualErrorMessage, "Error message text is incorrect or not shown. " + expectedErrorMessage);
+    }
+
+    [Then(@"the user should see missing password error")]
+    public void ThenTheUserShouldSeeMissingPasswordError()
+    {
+        string expectedErrorMessage = "Password required.";
+        string actualErrorMessage = _loginPageInteractions.ReturnPasswordErrorMessageText();
+        ClassicAssert.AreEqual(expectedErrorMessage, actualErrorMessage, "Error message text is incorrect or not shown. " + expectedErrorMessage);
+    }
+
+    [Then(@"the user sees '(.*)' status message error")]
+    public void ThenTheUserSeesStatusMessageError(string expectedErrorMessage)
+    {
+        string actualErrorMessage = _loginPageInteractions.ReturnSystemMessageErrorText();
+        ClassicAssert.AreEqual(expectedErrorMessage, actualErrorMessage, "Error message text is incorrect or not shown. " + expectedErrorMessage);
     }
 }

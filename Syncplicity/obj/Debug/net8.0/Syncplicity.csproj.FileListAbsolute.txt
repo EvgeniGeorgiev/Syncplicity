@@ -17,6 +17,7 @@ D:\Work\Syncplicity\syncplicity-project\Syncplicity\bin\Debug\net8.0\Syncplicity
 D:\Work\Syncplicity\syncplicity-project\Syncplicity\bin\Debug\net8.0\Syncplicity.pdb
 D:\Work\Syncplicity\syncplicity-project\Syncplicity\bin\Debug\net8.0\AngleSharp.dll
 D:\Work\Syncplicity\syncplicity-project\Syncplicity\bin\Debug\net8.0\BoDi.dll
+D:\Work\Syncplicity\syncplicity-project\Syncplicity\bin\Debug\net8.0\SeleniumExtras.WaitHelpers.dll
 D:\Work\Syncplicity\syncplicity-project\Syncplicity\bin\Debug\net8.0\ExtentReports.dll
 D:\Work\Syncplicity\syncplicity-project\Syncplicity\bin\Debug\net8.0\Gherkin.dll
 D:\Work\Syncplicity\syncplicity-project\Syncplicity\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll

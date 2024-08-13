@@ -6,7 +6,6 @@ public class ConfigurationSettings
     {
         public required string Browser { get; set; }
         public required string BaseUrl { get; set; }
-
     }
 
     public static Config GetConfig()
@@ -20,5 +19,4 @@ public class ConfigurationSettings
         Config config = ConfigurationSettings.GetConfig();
         return config.BaseUrl;
     }
-
 }

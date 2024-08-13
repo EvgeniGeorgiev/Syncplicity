@@ -29,6 +29,19 @@ public class GlobalPage
         });
     }
 
+    public void WaitForElementToBeVisible(By elementSelector)
+    {
+        try
+        {
+            WebDriverWait wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(10));
+            IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(elementSelector));
+        }
+        catch (WebDriverTimeoutException)
+        {
+            throw new Exception($"Element with selector {elementSelector.ToString()} was not visible within the timeout period.");
+        }
+    }
+
     internal bool IsElementVisible(By element)
     {
         IReadOnlyCollection<IWebElement> elementsList = webDriver.FindElements(element);

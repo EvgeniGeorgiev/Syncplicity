@@ -72,7 +72,8 @@ namespace Syncplicity.Tests.Features
         
         public virtual void FeatureBackground()
         {
-            testRunner.Given("the user is logged in with the provided account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Given("the user is logged in with \'syncplicity-technical-interview@dispostable.com\' user" +
+                    "name and \'s7ncplicit@Y\' password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
         }
         
         [NUnit.Framework.TestAttribute()]

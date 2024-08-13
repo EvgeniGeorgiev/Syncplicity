@@ -1,6 +1,4 @@
-﻿
-
-public class LoginPageInteractions(LoginPage loginPage)
+﻿public class LoginPageInteractions(LoginPage loginPage)
 {
     private readonly LoginPage _loginPage = loginPage;
 
@@ -30,5 +28,14 @@ public class LoginPageInteractions(LoginPage loginPage)
     public string ReturnEmailErrorMessageText()
     {
         return _loginPage.ReturnEmailErrorMessageText();
+    }
+
+    public string ReturnPasswordErrorMessageText()
+    {
+        return _loginPage.ReturnPasswordErrorMessageText();
+    }
+    public string ReturnSystemMessageErrorText()
+    {
+        return _loginPage.ReturnSystemMessageErrorText();
     }
 }

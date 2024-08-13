@@ -1,6 +1,4 @@
-﻿
-
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 public class BusinessPageInteractions(BusinessPage businessPage)
 {
@@ -28,7 +26,6 @@ public class BusinessPageInteractions(BusinessPage businessPage)
 
     internal bool IsOnPageUrl(string containsUrl)
     {
-        //ToDo: Page names as a test data
         return _businessPage.GetCurrentURL().Contains(containsUrl);
     }
 
@@ -39,6 +36,4 @@ public class BusinessPageInteractions(BusinessPage businessPage)
         _businessPage.SelectSubMenuSection(option);
         _businessPage.WaitForAjaxToComplete();
     }
-
-
 }
